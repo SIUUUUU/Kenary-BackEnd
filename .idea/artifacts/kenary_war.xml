@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="kenary:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>kenary</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="kenary-1.0.0-ALPHA.war">
+      <element id="artifact" artifact-name="kenary:war exploded" />
+    </root>
+  </artifact>
+</component>
