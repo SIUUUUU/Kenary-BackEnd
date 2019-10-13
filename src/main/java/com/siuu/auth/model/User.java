@@ -1,14 +1,16 @@
 package com.siuu.auth.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "user")
 public class User {
     @Id
     @GeneratedValue
-    @SequenceGenerator()
+    //@SequenceGenerator(name = )
     private Long id;
+
 
     private String username;
 
