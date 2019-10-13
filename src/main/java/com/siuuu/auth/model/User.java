@@ -1,4 +1,4 @@
-package com.siuu.auth.model;
+package com.siuuu.auth.model;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -10,7 +10,6 @@ public class User {
     @GeneratedValue
     //@SequenceGenerator(name = )
     private Long id;
-
 
     private String username;
 

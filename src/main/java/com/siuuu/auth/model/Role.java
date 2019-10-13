@@ -1,4 +1,4 @@
-package com.siuu.auth.model;
+package com.siuuu.auth.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
