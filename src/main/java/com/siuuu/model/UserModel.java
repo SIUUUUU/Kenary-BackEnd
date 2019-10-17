@@ -2,7 +2,7 @@ package com.siuuu.model;
 
 import com.siuuu.domain.User;
 
-public class ModelUser {
+public class UserModel {
     //Attributes
     private long cUser;
 
@@ -31,7 +31,7 @@ public class ModelUser {
     private String uType;
     //Attributes
     //Constructors
-    public ModelUser(User user){
+    public UserModel(User user){
         this.cUser = user.getcUser();
         this.uPhoto = user.getuPhoto();
         this.uFirstName = user.getuFirstNames();
@@ -46,10 +46,10 @@ public class ModelUser {
         this.uCareer = user.getuCareer();
         this.uType = user.getuType();
     }
-    public ModelUser(){
+    public UserModel(){
     }
 
-    public ModelUser(long c_user, String uPhoto, String uFirstName, String uLastNames,
+    public UserModel(long c_user, String uPhoto, String uFirstName, String uLastNames,
                      String uUsername, String uPassword, String uBirthday, String uGender,
                      String uCountry, String uInstitution, String uDegree, String uCareer, String uType) {
         this.cUser = c_user;
