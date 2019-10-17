@@ -8,7 +8,7 @@
         <version>2.1.8.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.siuu</groupId>
+    <groupId>com.siuuu</groupId>
     <artifactId>kenary</artifactId>
     <version>1.0.0-ALPHA</version>
     <packaging>war</packaging>
