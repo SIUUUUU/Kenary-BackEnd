@@ -9,8 +9,8 @@
         <module name="kenary" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="kenary" target="11" />
+    <bytecodeTargetLevel target="8">
+      <module name="kenary" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

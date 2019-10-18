@@ -20,7 +20,7 @@ public class UserService {
 
     public boolean createUser(User user){
         try{
-            userRepository.save(user);
+            userRepository.saveAndFlush(user);
             return true;
         }catch(Exception e){
             return false;
