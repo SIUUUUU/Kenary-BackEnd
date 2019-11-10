@@ -3,9 +3,11 @@ package com.siuuu.service;
 import com.siuuu.domain.Session;
 import com.siuuu.repository.SessionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class SessionServiceImpl implements SessionService{
 
     @Autowired
