@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Person implements Serializable {
+public class Person {
     //Attributes
     @Id
     @GeneratedValue(generator = "person_c_person_seq", strategy = GenerationType.AUTO)

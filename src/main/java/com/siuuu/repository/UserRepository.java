@@ -1,14 +1,14 @@
 package com.siuuu.repository;
 
-import com.siuuu.domain.User;
+import com.siuuu.domain.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
 
-@Repository("userRepo")
-public interface UserRepository extends JpaRepository<User, Serializable> {
+@Repository
+public interface UserRepository extends JpaRepository<Person, Long> {
 
-    public abstract User findByUUsernameAAndUPassword (String username, String password);
+    public abstract Person findByUUsernameAAndUPassword (String username, String password);
 
 }
