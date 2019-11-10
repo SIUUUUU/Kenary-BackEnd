@@ -1,23 +1,22 @@
 package com.siuuu.controller;
 
 import com.siuuu.domain.Person;
-import com.siuuu.service.PersonServiceImpl;
+import com.siuuu.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@RestController
-@RequestMapping("/")
+@Controller
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
 public class PersonController {
 
     @Autowired
-    @Qualifier("userService")
-    private PersonServiceImpl userService;
+    private PersonService personService;
 
-    @PutMapping("/user")
+    @PostMapping("/person")
     public boolean newUser(@RequestBody @Valid Person user){
-        return userService.save(user);
+        return personService.save(user);
     }
 }

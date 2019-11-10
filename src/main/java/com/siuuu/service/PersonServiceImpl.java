@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("userService")
+@Service
 public class PersonServiceImpl implements PersonService {
 
     @Autowired
@@ -21,7 +21,7 @@ public class PersonServiceImpl implements PersonService {
 
     public boolean save(Person person){
         try{
-            personRepository.saveAndFlush(person);
+            personRepository.save(person);
             return true;
         }catch(Exception e){
             e.printStackTrace();

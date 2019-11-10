@@ -17,15 +17,15 @@ import java.io.Serializable;
 public class Person {
     //Attributes
     @Id
-    @GeneratedValue(generator = "person_c_person_seq", strategy = GenerationType.AUTO)
-    @SequenceGenerator(name = "person_c_person_seq", sequenceName = "public.person_c_person_seq", allocationSize = 1)
-    private long cPërson;
+    @GeneratedValue(generator = "person_c_user_seq", strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "person_c_user_seq", sequenceName = "public.person_c_user_seq", allocationSize = 1)
+    private long cPerson;
 
     private String uPhoto;
 
-    private String uFirstNames;
+    private String uFirstName;
 
-    private String uLastNames;
+    private String uLastName;
 
     private String uUsername;
 
