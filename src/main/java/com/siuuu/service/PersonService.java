@@ -8,5 +8,5 @@ public interface PersonService {
 
     List<Person> findAll();
     boolean save(Person person);
-    Person findByUserForLogin(String username, String password);
+    boolean findByUserForLogin(String username, String password);
 }

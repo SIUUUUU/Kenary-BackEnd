@@ -30,8 +30,8 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Person findByUserForLogin(String username, String password) {
-        return null;
+    public boolean findByUserForLogin(String username, String password) {
+        return personRepository.findByUUsernameAAndUPassword(username, password);
     }
 
 }

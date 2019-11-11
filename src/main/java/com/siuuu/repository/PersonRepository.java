@@ -10,6 +10,6 @@ import java.io.Serializable;
 @Repository
 public interface PersonRepository extends CrudRepository<Person, Long> {
 
-    public Person findByUUsernameAAndUPassword (String username, String password);
+    public boolean findByUUsernameAAndUPassword (String username, String password);
 
 }

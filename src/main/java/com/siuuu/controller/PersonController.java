@@ -19,4 +19,9 @@ public class PersonController {
     public boolean newUser(@RequestBody @Valid Person person){
         return personService.save(person);
     }
+
+    @GetMapping("/login")
+    public boolean searchUser(@RequestBody @Valid String username, String password){
+        return personService.findByUserForLogin(username, password);
+    }
 }
