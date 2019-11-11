@@ -16,7 +16,7 @@ public class PersonController {
     private PersonService personService;
 
     @PostMapping("/person")
-    public boolean newUser(@RequestBody @Valid Person user){
-        return personService.save(user);
+    public boolean newUser(@RequestBody @Valid Person person){
+        return personService.save(person);
     }
 }
