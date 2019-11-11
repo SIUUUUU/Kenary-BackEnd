@@ -10,5 +10,5 @@ public interface SessionService {
     List<Session> sessionOfSubject(String subject);
     List<Session> sessionOnPlace(String place);
     List<Session> sessionOnCity(String city);
-
+    List<Session> findAll();
 }

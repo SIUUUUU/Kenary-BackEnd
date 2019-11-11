@@ -32,4 +32,9 @@ public class SessionServiceImpl implements SessionService{
     public List<Session> sessionOnCity(String city) {
         return sessionRepository.findBySCity(city);
     }
+
+    @Override
+    public List<Session> findAll(){
+        return sessionRepository.findAll();
+    }
 }
