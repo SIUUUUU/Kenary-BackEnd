@@ -3,7 +3,6 @@ package com.siuuu.service;
 import com.siuuu.domain.Person;
 import com.siuuu.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,8 +29,8 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public boolean findByUserForLogin(String username, String password) {
-        return personRepository.findByUUsernameAAndUPassword(username, password);
+    public Person findByUserForLogin(String username, String password) {
+        return personRepository.findByUsernameAndPassword(username, password);
     }
 
 }
