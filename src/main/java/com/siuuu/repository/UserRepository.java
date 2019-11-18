@@ -12,10 +12,7 @@ import java.util.List;
 
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
-    //@Query(nativeQuery = true, value = "SELECT * FROM public.person WHERE username = :username AND password = :password")
-    //public boolean findByUsernameAndPassword (String username, String password);
-    //@Query(value = "SELECT * FROM person" ,nativeQuery = true)
-    //List<Person> findAllByF();
 
-    public Person findByUsernameAndPassword(String username, String password);
+    public Person findByUUsernameAndUPassword(String username, String password);
+
 }

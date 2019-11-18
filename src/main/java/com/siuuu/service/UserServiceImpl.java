@@ -18,6 +18,7 @@ public class PersonServiceImpl implements PersonService {
         return null;
     }
 
+    @Override
     public boolean save(Person person){
         try{
             personRepository.save(person);
@@ -30,7 +31,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person findByUserForLogin(String username, String password) {
-        return personRepository.findByUsernameAndPassword(username, password);
+        return personRepository.findByUUsernameAndUPassword(username, password);
     }
 
 }
