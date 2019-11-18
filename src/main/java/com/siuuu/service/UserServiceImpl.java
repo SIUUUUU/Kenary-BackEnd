@@ -1,27 +1,27 @@
 package com.siuuu.service;
 
-import com.siuuu.domain.Person;
-import com.siuuu.repository.PersonRepository;
+import com.siuuu.domain.User;
+import com.siuuu.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class PersonServiceImpl implements PersonService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
-    private PersonRepository personRepository;
+    private UserRepository userRepository;
 
     @Override
-    public List<Person> findAll() {
+    public List<User> findAll() {
         return null;
     }
 
     @Override
-    public boolean save(Person person){
+    public boolean save(User user){
         try{
-            personRepository.save(person);
+            userRepository.save(user);
             return true;
         }catch(Exception e){
             e.printStackTrace();
@@ -30,8 +30,8 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Person findByUserForLogin(String username, String password) {
-        return personRepository.findByUUsernameAndUPassword(username, password);
+    public User findByUserForLogin(String username, String password) {
+        return userRepository.findByUUsernameAndUPassword(username, password);
     }
 
 }

@@ -1,35 +1,32 @@
 package com.siuuu.controller;
 
-import com.siuuu.domain.Person;
-import com.siuuu.service.PersonService;
+import com.siuuu.domain.User;
+import com.siuuu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 @RestController
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
-public class PersonController {
+public class UserController {
 
     @Autowired
-    private PersonService personService;
+    private UserService userService;
 
-    @PostMapping("/person")
-    public boolean newUser(@RequestBody @Valid Person person){
-        return personService.save(person);
+    @PostMapping("/user")
+    public boolean newUser(@RequestBody @Valid User user){
+        return userService.save(user);
     }
 
     @GetMapping("/login/{username}/{password}")
-    public Person searchUser(@PathVariable("username") String username, @PathVariable("password") String password){
-        return personService.findByUserForLogin(username, password);
+    public User searchUser(@PathVariable("username") String username, @PathVariable("password") String password){
+        return userService.findByUserForLogin(username, password);
     }
 
-    @GetMapping("/chale")
-    public List<Person> chale(){
-        return personService.findAll();
+    @GetMapping("/userslist")
+    public List<User> usersList(){
+        return userService.findAll();
     }
 }

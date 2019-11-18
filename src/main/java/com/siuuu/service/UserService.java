@@ -1,12 +1,13 @@
 package com.siuuu.service;
 
-import com.siuuu.domain.Person;
+import com.siuuu.domain.User;
 
 import java.util.List;
 
-public interface PersonService {
+public interface UserService {
 
-    List<Person> findAll();
-    boolean save(Person person);
-    Person findByUserForLogin(String username, String password);
+    List<User> findAll();
+    boolean save(User user);
+    User findByUserForLogin(String username, String password);
+
 }
