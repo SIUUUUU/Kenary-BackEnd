@@ -9,11 +9,11 @@ import javax.persistence.*;
 
 @Entity
 @Table(schema = "public", name = "usuario")
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
-public class Person {
+//@Setter
+//@Getter
+//@NoArgsConstructor
+//@AllArgsConstructor
+public class User {
     //Attributes
     @Id
     @Column(name = "c_usuario")
@@ -57,4 +57,129 @@ public class Person {
     @Column(name = "u_carrera")
     private String uCareer;
     //Attributes
+    //AllArgumentsConstructor
+    public User(String uPhoto, String uFirstName, String uLastName, String uUsername, String uPassword, String uBirthday, String uCountry, String uInstitution, String uGender, String uDegree, String uType, String uCareer) {
+        this.uPhoto = uPhoto;
+        this.uFirstName = uFirstName;
+        this.uLastName = uLastName;
+        this.uUsername = uUsername;
+        this.uPassword = uPassword;
+        this.uBirthday = uBirthday;
+        this.uCountry = uCountry;
+        this.uInstitution = uInstitution;
+        this.uGender = uGender;
+        this.uDegree = uDegree;
+        this.uType = uType;
+        this.uCareer = uCareer;
+    }
+    //AllArgumentsConstructor
+    //NoArgumentsConstructor
+    public User() {
+    }
+    //NoArgumentsConstructor
+    //Getters and setters
+    public long getcUser() {
+        return cUser;
+    }
+
+    public void setcUser(long cUser) {
+        this.cUser = cUser;
+    }
+
+    public String getuPhoto() {
+        return uPhoto;
+    }
+
+    public void setuPhoto(String uPhoto) {
+        this.uPhoto = uPhoto;
+    }
+
+    public String getuFirstName() {
+        return uFirstName;
+    }
+
+    public void setuFirstName(String uFirstName) {
+        this.uFirstName = uFirstName;
+    }
+
+    public String getuLastName() {
+        return uLastName;
+    }
+
+    public void setuLastName(String uLastName) {
+        this.uLastName = uLastName;
+    }
+
+    public String getuUsername() {
+        return uUsername;
+    }
+
+    public void setuUsername(String uUsername) {
+        this.uUsername = uUsername;
+    }
+
+    public String getuPassword() {
+        return uPassword;
+    }
+
+    public void setuPassword(String uPassword) {
+        this.uPassword = uPassword;
+    }
+
+    public String getuBirthday() {
+        return uBirthday;
+    }
+
+    public void setuBirthday(String uBirthday) {
+        this.uBirthday = uBirthday;
+    }
+
+    public String getuCountry() {
+        return uCountry;
+    }
+
+    public void setuCountry(String uCountry) {
+        this.uCountry = uCountry;
+    }
+
+    public String getuInstitution() {
+        return uInstitution;
+    }
+
+    public void setuInstitution(String uInstitution) {
+        this.uInstitution = uInstitution;
+    }
+
+    public String getuGender() {
+        return uGender;
+    }
+
+    public void setuGender(String uGender) {
+        this.uGender = uGender;
+    }
+
+    public String getuDegree() {
+        return uDegree;
+    }
+
+    public void setuDegree(String uDegree) {
+        this.uDegree = uDegree;
+    }
+
+    public String getuType() {
+        return uType;
+    }
+
+    public void setuType(String uType) {
+        this.uType = uType;
+    }
+
+    public String getuCareer() {
+        return uCareer;
+    }
+
+    public void setuCareer(String uCareer) {
+        this.uCareer = uCareer;
+    }
+    //Getters and setters
 }
