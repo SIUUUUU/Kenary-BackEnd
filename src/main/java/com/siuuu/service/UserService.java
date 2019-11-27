@@ -9,5 +9,6 @@ public interface UserService {
     List<User> findAll();
     boolean save(User user);
     User findByUserForLogin(String username, String password);
+    User findSessionsByUser(String username);
 
 }

@@ -1,5 +1,6 @@
 package com.siuuu.controller;
 
+import com.siuuu.domain.Session;
 import com.siuuu.domain.User;
 import com.siuuu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,18 @@ public class UserController {
         return userService.findByUserForLogin(username, password);
     }
 
-    @GetMapping("/userslist")
+    @GetMapping("/usersList")
     public List<User> usersList(){
         return userService.findAll();
     }
+
+    @GetMapping("/sessionsOf/{username}")
+    public List<Session> sessionListByUsername(@PathVariable("username") String username){
+        User user = new User();
+        user = userService.findSessionsByUser(username);
+        List<Session> sessions = null;
+        sessions = user.getuSessions();
+        return sessions;
+    }
+
 }
