@@ -34,7 +34,7 @@ public class SessionController {
 
     @GetMapping("/sessionByCity/{city}")
     public List<Session> searchByCity(@PathVariable String city){
-        return sessionService.sessionOfSubject(city);
+        return sessionService.sessionOnCity(city);
     }
 
     @GetMapping("/sessions")
