@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(schema = "public", name = "usuario")
@@ -56,9 +57,12 @@ public class User {
 
     @Column(name = "u_carrera")
     private String uCareer;
+
+    @OneToMany(mappedBy = "sUser", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Session> uSessions;
     //Attributes
     //AllArgumentsConstructor
-    public User(String uPhoto, String uFirstName, String uLastName, String uUsername, String uPassword, String uBirthday, String uCountry, String uInstitution, String uGender, String uDegree, String uType, String uCareer) {
+    public User(String uPhoto, String uFirstName, String uLastName, String uUsername, String uPassword, String uBirthday, String uCountry, String uInstitution, String uGender, String uDegree, String uType, String uCareer, List<Session> uSessions) {
         this.uPhoto = uPhoto;
         this.uFirstName = uFirstName;
         this.uLastName = uLastName;
@@ -71,6 +75,7 @@ public class User {
         this.uDegree = uDegree;
         this.uType = uType;
         this.uCareer = uCareer;
+        this.uSessions = uSessions;
     }
     //AllArgumentsConstructor
     //NoArgumentsConstructor
@@ -180,6 +185,14 @@ public class User {
 
     public void setuCareer(String uCareer) {
         this.uCareer = uCareer;
+    }
+
+    public List<Session> getuSessions(){
+        return uSessions;
+    }
+
+    public void setuSessions(List<Session> sessions){
+        this.uSessions = uSessions;
     }
     //Getters and setters
 }
