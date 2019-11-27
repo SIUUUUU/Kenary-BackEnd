@@ -5,22 +5,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "session")
+@Table(schema ="public", name = "session")
 public class Session {
 
     //Attributes
     @Id
+    @GeneratedValue(generator = "sesion_c_sesion_seq", strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "sesion_c_sesion_seq", sequenceName = "public.sesion_c_sesion_seq", allocationSize = 1)
     @Column(name = "c_sesion")
     private long cSession;
 
-    @Column(name = "c_creator")
-    private long cCreator;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "c_creador")
+    private User sUser;
 
     @Column(name = "s_pais")
     private String sCountry;
@@ -48,9 +48,9 @@ public class Session {
     //Attributes
     //All Arguments Constructor
 
-    public Session(long cSession, long cCreator, String sCountry, String sCity, String sPlace, String sDate, String sTime, String sSubject, String sTopic, String sPrice) {
+    public Session(long cSession, User sUser, String sCountry, String sCity, String sPlace, String sDate, String sTime, String sSubject, String sTopic, String sPrice) {
         this.cSession = cSession;
-        this.cCreator = cCreator;
+        this.sUser = sUser;
         this.sCountry = sCountry;
         this.sCity = sCity;
         this.sPlace = sPlace;
@@ -75,12 +75,12 @@ public class Session {
         this.cSession = cSession;
     }
 
-    public long getcCreator() {
-        return cCreator;
+    public User getsUser() {
+        return sUser;
     }
 
-    public void setcCreator(long cCreator) {
-        this.cCreator = cCreator;
+    public void setsUser(User sUser) {
+        this.sUser = sUser;
     }
 
     public String getsCountry() {
