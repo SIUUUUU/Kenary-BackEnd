@@ -37,4 +37,5 @@ public class SessionServiceImpl implements SessionService{
     public List<Session> findAll(){
         return sessionRepository.findAll();
     }
+
 }

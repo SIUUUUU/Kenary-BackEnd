@@ -2,12 +2,10 @@ package com.siuuu.controller;
 
 import com.siuuu.domain.Session;
 import com.siuuu.service.SessionService;
+import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -18,6 +16,26 @@ public class SessionController {
 
     @Autowired
     private SessionService sessionService;
+
+    @GetMapping("/sessionByTopic/{topic}")
+    public List<Session> searchByTopic(@PathVariable String topic){
+        return sessionService.sessionOfTopic(topic);
+    }
+
+    @GetMapping("/sessionBySubject/{subject}")
+    public List<Session> searchBySubject(@PathVariable String subject){
+        return sessionService.sessionOfSubject(subject);
+    }
+
+    @GetMapping("/sessionByCity/{place}")
+    public List<Session> searchByPlace(@PathVariable String place){
+        return sessionService.sessionOnPlace(place);
+    }
+
+    @GetMapping("/sessionByCity/{city}")
+    public List<Session> searchByCity(@PathVariable String city){
+        return sessionService.sessionOfSubject(city);
+    }
 
     @GetMapping("/sessions")
     public List<Session> searchAll(){

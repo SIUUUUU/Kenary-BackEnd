@@ -12,6 +12,5 @@ public interface SessionRepository extends JpaRepository<Session, Long> {
     public List<Session> findBySSubject(String subject);
     public List<Session> findBySPlace(String place);
     public List<Session> findBySCity(String city);
-    //buscar por creador
 
 }
