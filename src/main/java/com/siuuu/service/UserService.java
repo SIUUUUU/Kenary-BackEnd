@@ -10,5 +10,6 @@ public interface UserService {
     boolean save(User user);
     User findByUserForLogin(String username, String password);
     User findSessionsByUser(String username);
+    void remove(User user);
 
 }
