@@ -18,8 +18,8 @@ public class User {
     //Attributes
     @Id
     @Column(name = "c_usuario")
-    @GeneratedValue(generator = "usuario_c_usuario_seq", strategy = GenerationType.AUTO)
-    @SequenceGenerator(name = "usuario_c_usuario_seq", sequenceName = "public.usuario_c_usuario_seq", allocationSize = 1)
+    @GeneratedValue(generator = "usuario_c_usuario_seq1", strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "usuario_c_usuario_seq1", sequenceName = "public.usuario_c_usuario_seq1", allocationSize = 1)
     private long cUser;
 
     @Column(name = "u_foto")
@@ -58,11 +58,11 @@ public class User {
     @Column(name = "u_carrera")
     private String uCareer;
 
-    @OneToMany(mappedBy = "sUser", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Session> uSessions;
+    //@OneToMany(mappedBy = "sUser", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    //private List<Session> uSessions;
     //Attributes
     //AllArgumentsConstructor
-    public User(String uPhoto, String uFirstName, String uLastName, String uUsername, String uPassword, String uBirthday, String uCountry, String uInstitution, String uGender, String uDegree, String uType, String uCareer, List<Session> uSessions) {
+    public User(String uPhoto, String uFirstName, String uLastName, String uUsername, String uPassword, String uBirthday, String uCountry, String uInstitution, String uGender, String uDegree, String uType, String uCareer) {
         this.uPhoto = uPhoto;
         this.uFirstName = uFirstName;
         this.uLastName = uLastName;
@@ -75,7 +75,7 @@ public class User {
         this.uDegree = uDegree;
         this.uType = uType;
         this.uCareer = uCareer;
-        this.uSessions = uSessions;
+        //this.uSessions = uSessions;
     }
     //AllArgumentsConstructor
     //NoArgumentsConstructor
@@ -187,12 +187,12 @@ public class User {
         this.uCareer = uCareer;
     }
 
-    public List<Session> getuSessions(){
-        return uSessions;
-    }
+    //public List<Session> getuSessions(){
+    //    return uSessions;
+    //}
 
-    public void setuSessions(List<Session> sessions){
-        this.uSessions = uSessions;
-    }
+    //public void setuSessions(List<Session> sessions){
+    //    this.uSessions = uSessions;
+    //}
     //Getters and setters
 }

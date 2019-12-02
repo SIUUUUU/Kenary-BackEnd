@@ -31,13 +31,13 @@ public class UserController {
         return userService.findAll();
     }
 
-    @GetMapping("/sessionsOf/{username}")
-    public List<Session> sessionListByUsername(@PathVariable("username") String username){
-        User user = new User();
-        user = userService.findSessionsByUser(username);
-        List<Session> sessions = null;
-        sessions = user.getuSessions();
-        return sessions;
-    }
+    //@GetMapping("/sessionsOf/{username}")
+    //public List<Session> sessionListByUsername(@PathVariable("username") String username){
+    //    User user = new User();
+    //    user = userService.findSessionsByUser(username);
+    //    List<Session> sessions = null;
+    //    sessions = user.getuSessions();
+    //    return sessions;
+    //}
 
 }
