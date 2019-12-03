@@ -44,4 +44,15 @@ public class UserServiceImpl implements UserService {
         userRepository.delete(user);
     }
 
+    @Override
+    public boolean modifyUser(User user){
+        try {
+            userRepository.save(user);
+            return true;
+        } catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }

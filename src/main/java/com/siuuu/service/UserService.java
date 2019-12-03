@@ -11,5 +11,6 @@ public interface UserService {
     User findByUserForLogin(String username, String password);
     User findSessionsByUser(String username);
     void remove(User user);
+    boolean modifyUser(User user);
 
 }

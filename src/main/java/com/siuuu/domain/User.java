@@ -1,19 +1,11 @@
 package com.siuuu.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
 @Table(schema = "public", name = "usuario")
-//@Setter
-//@Getter
-//@NoArgsConstructor
-//@AllArgsConstructor
 public class User {
     //Attributes
     @Id
@@ -31,6 +23,7 @@ public class User {
     @Column(name = "u_apellidos")
     private String uLastName;
 
+    @NotNull
     @Column(name = "u_nombre_usuario")
     private String uUsername;
 
