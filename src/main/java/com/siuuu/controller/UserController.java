@@ -32,9 +32,15 @@ public class UserController {
     }
 
     @PutMapping("/user")
-    private boolean updateUserByUsername(@RequestBody @Valid User user){
+    public boolean updateUserByUsername(@RequestBody @Valid User user){
         return userService.modifyUser(user);
     }
+
+    @GetMapping("/user/{Id}")
+    public User searchUserById(@PathVariable Long Id){
+        return userService.findUserById(Id);
+    }
+
 
     //@GetMapping("/sessionsOf/{username}")
     //public List<Session> sessionListByUsername(@PathVariable("username") String username){
