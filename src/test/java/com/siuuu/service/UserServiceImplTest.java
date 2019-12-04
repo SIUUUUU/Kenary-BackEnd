@@ -82,5 +82,4 @@ public class UserServiceImplTest {
         assertThat(found.getuPassword()).isEqualTo(password);
 
     }
-
 }
