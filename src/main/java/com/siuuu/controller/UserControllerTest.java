@@ -19,6 +19,7 @@ import static org.assertj.core.internal.bytebuddy.matcher.ElementMatchers.is;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -48,5 +49,17 @@ public class UserControllerTest {
                 .andExpect(status().isOk());
     }
 
+    @Test
+    public void givenUsersWhenPostUsersThenReturnTrue() throws Exception {
+
+        User tested = new User("mifoto.png", "Marcelo", "Martínez", "marcelo2m97",
+                "12345678", "26/10/1997", "El Salvador", "UCA", "Masculino", "Bachiller",
+                "Estudiante", "Ingeniería Informática");
+
+        given(userService.save(tested)).willReturn(true);
+
+        mvc.perform(post("/user")
+            .contentType(MediaType.ALL));
+    }
 
 }
