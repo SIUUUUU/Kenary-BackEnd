@@ -22,7 +22,7 @@ public class UserRepositoryTest {
     private UserRepository userRepository;
 
     @Test
-    public void whenFindByUsername_thenReturnUser(){
+    public void whenFindByUsernameThenReturnUser(){
         User given = new User("mifoto.png", "Marcelo", "Martínez", "marcelo2m97",
                 "12345678", "26/10/1997", "El Salvador", "UCA", "Masculino", "Bachiller",
                 "Estudiante", "Ingeniería Informática");
@@ -35,4 +35,29 @@ public class UserRepositoryTest {
 
     }
 
+    @Test
+    public void whenFindByUsernameAndPasswordThenReturnUser(){
+        User given = new User("mifoto.png", "Marcelo", "Martínez", "marcelo2m97",
+                "12345678", "26/10/1997", "El Salvador", "UCA", "Masculino", "Bachiller",
+                "Estudiante", "Ingeniería Informática");
+        entityManager.persist(given);
+        entityManager.flush();
+
+        User when = userRepository.findByUUsernameAndUPassword(given.getuUsername(), given.getuPassword());
+        assertThat(when.getuUsername()).isEqualTo(given.getuUsername());
+        assertThat(when.getuPassword()).isEqualTo(given.getuPassword());
+
+    }
+
+    @Test
+    public void whenFindByIdThenReturnUser(){
+        User given = new User("mifoto.png", "Marcelo", "Martínez", "marcelo2m97",
+                "12345678", "26/10/1997", "El Salvador", "UCA", "Masculino", "Bachiller",
+                "Estudiante", "Ingeniería Informática");
+        entityManager.persist(given);
+        entityManager.flush();
+
+        User when = userRepository.findByCUser(given.getcUser());
+        assertThat(when.getcUser()).isEqualTo(given.getcUser());
+    }
 }
