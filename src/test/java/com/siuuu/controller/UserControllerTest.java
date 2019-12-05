@@ -46,6 +46,7 @@ public class UserControllerTest {
         mvc.perform(get("/usersList")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
-                //.andExpect(jsonPath("$[0].uUsername", is(tested.getuUsername())));
     }
+
+
 }
